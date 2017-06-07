@@ -1,0 +1,7 @@
+rootProject.name = 'softage-assignment'
+include 'employee-crud-service'
+include 'employee-report-service'
+include 'employee-crud-service-api'
+include 'employee-crud-service-api'
+include 'employee-crud-service-core'
+

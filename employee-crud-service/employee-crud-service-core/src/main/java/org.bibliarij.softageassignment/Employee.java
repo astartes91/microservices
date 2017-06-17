@@ -1,12 +1,10 @@
-package org.bibliarij.softageassignment.entity;
+package org.bibliarij.softageassignment;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import java.time.LocalDateTime;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
+ * Employee entity class
  * Created by Vladimir Nizamutdinov on 08/June/2017.
  */
 @Entity
@@ -20,11 +18,13 @@ public class Employee {
     private String position;
     private String department;
 
-    @Column(name = "employment_start_date", columnDefinition = "TIMESTAMP")
-    private LocalDateTime employmentStartDate;
+    @Column(name = "employment_start_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date employmentStartDate;
 
-    @Column(name = "employment_end_date", columnDefinition = "TIMESTAMP")
-    private LocalDateTime employmentEndDate;
+    @Column(name = "employment_end_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date employmentEndDate;
 
     public String getFullname() {
         return fullname;
@@ -50,19 +50,19 @@ public class Employee {
         this.department = department;
     }
 
-    public LocalDateTime getEmploymentStartDate() {
+    public Date getEmploymentStartDate() {
         return employmentStartDate;
     }
 
-    public void setEmploymentStartDate(LocalDateTime employmentStartDate) {
+    public void setEmploymentStartDate(Date employmentStartDate) {
         this.employmentStartDate = employmentStartDate;
     }
 
-    public LocalDateTime getEmploymentEndDate() {
+    public Date getEmploymentEndDate() {
         return employmentEndDate;
     }
 
-    public void setEmploymentEndDate(LocalDateTime employmentEndDate) {
+    public void setEmploymentEndDate(Date employmentEndDate) {
         this.employmentEndDate = employmentEndDate;
     }
 

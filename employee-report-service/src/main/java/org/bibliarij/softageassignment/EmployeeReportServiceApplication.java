@@ -1,5 +1,7 @@
 package org.bibliarij.softageassignment;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -27,5 +29,13 @@ public class EmployeeReportServiceApplication {
     @Bean
     public EmployeeService employeeService(RestTemplate restTemplate){
         return new EmployeeServiceRestClient(restTemplate, "http://localhost:8080");
+    }
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        ObjectMapper mapper = new ObjectMapper();
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+
+        return mapper;
     }
 }

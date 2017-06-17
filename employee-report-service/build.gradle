@@ -1,14 +1,23 @@
 group 'org.bibliarij.softage-assignment'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    ext { springBootVersion = '1.5.3.RELEASE' }
+    repositories { mavenCentral() }
+    dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
+}
+
 apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
 
 sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
+repositories { mavenCentral() }
 
 dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+    compile project(":employee-crud-service:employee-crud-service-api")
 }

@@ -30,7 +30,7 @@ public class EmployeeReportController {
      */
     @ApiOperation("Get report")
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public EmployeeReport get(){
+    public EmployeeReport getReport(){
 
         List<EmployeeDto> employees = employeeService.list();
         return employeeReportService.createReport(employees);

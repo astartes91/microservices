@@ -16,8 +16,9 @@ repositories { mavenCentral() }
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
-    testCompile group: 'junit', name: 'junit', version: '4.12'
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
     compile project(":employee-crud-service:employee-crud-service-api")
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
 }

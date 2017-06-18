@@ -15,15 +15,11 @@ sourceCompatibility = 1.8
 repositories { mavenCentral() }
 
 dependencies {
-    //compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile group: 'com.h2database', name: 'h2', version: '1.4.195'
     compile "org.flywaydb:flyway-core:4.2.0"
-    //compile group: 'org.hibernate', name: 'hibernate-java8', version: '5.2.10.Final'
     compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
     compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
     compile project(":employee-crud-service:employee-crud-service-api")
-
-    testCompile group: 'junit', name: 'junit', version: '4.12'
 }

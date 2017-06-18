@@ -21,14 +21,18 @@ public class EmployeeReportController {
     @Autowired
     private EmployeeService employeeService;
 
+    @Autowired
+    private EmployeeReportService employeeReportService;
+
     /**
      * Get report
      * @return
      */
     @ApiOperation("Get report")
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public List<EmployeeDto> get(){
+    public EmployeeReport get(){
 
-        return employeeService.list();
+        List<EmployeeDto> employees = employeeService.list();
+        return employeeReportService.createReport(employees);
     }
 }

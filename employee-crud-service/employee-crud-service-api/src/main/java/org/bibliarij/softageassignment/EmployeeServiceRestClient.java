@@ -1,6 +1,14 @@
 package org.bibliarij.softageassignment;
 
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * REST client for "Employee" entity
@@ -16,14 +24,24 @@ public class EmployeeServiceRestClient implements EmployeeService {
         this.url = url;
     }
 
+
     /**
-     * Get employee by id
+     * Get list of employees
      *
-     * @param id
      * @return
      */
     @Override
-    public EmployeeDto get(Long id) {
-        return restTemplate.getForObject(url.concat("/employees/{id}"), EmployeeDto.class, id);
+    public List<EmployeeDto> list() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        HttpEntity entity = new HttpEntity(headers);
+
+        ParameterizedTypeReference<List<EmployeeDto>> responseType =
+                new ParameterizedTypeReference<List<EmployeeDto>>() {};
+        List<EmployeeDto> list = restTemplate.exchange(
+                url.concat("/employees/"), HttpMethod.GET, entity, responseType
+        )
+                .getBody();
+        return list;
     }
 }

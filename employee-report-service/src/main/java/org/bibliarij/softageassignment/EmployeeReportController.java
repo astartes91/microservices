@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * REST controller for employee report
  * Created by unknown on 18.06.2017.
@@ -25,8 +27,8 @@ public class EmployeeReportController {
      */
     @ApiOperation("Get report")
     @RequestMapping(method = RequestMethod.GET, produces = "application/json")
-    public EmployeeDto get(){
+    public List<EmployeeDto> get(){
 
-        return employeeService.get(1L);
+        return employeeService.list();
     }
 }

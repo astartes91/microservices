@@ -1,5 +1,7 @@
 package org.bibliarij.softageassignment;
 
+import java.util.List;
+
 /**
  * Service for "Employee" entity
  * Created by unknown on 18.06.2017.
@@ -7,9 +9,8 @@ package org.bibliarij.softageassignment;
 public interface EmployeeService {
 
     /**
-     * Get employee by id
-     * @param id
+     * Get list of employees
      * @return
      */
-    EmployeeDto get(Long id);
+    List<EmployeeDto> list();
 }

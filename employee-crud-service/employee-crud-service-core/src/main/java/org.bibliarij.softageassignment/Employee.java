@@ -8,23 +8,33 @@ import java.util.Date;
  * Created by Vladimir Nizamutdinov on 08/June/2017.
  */
 @Entity
+@Table(name = "employee", schema = "public")
 public class Employee {
 
     @Id
     @GeneratedValue
     private Long id;
 
+    @Column(nullable = false)
     private String fullname;
+
+    @Column(nullable = false)
     private String position;
+
+    @Column(nullable = false)
     private String department;
 
-    @Column(name = "employment_start_date")
+    @Column(name = "employment_start_date", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private Date employmentStartDate;
 
     @Column(name = "employment_end_date")
     @Temporal(TemporalType.TIMESTAMP)
     private Date employmentEndDate;
+
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     public String getFullname() {
         return fullname;
@@ -72,5 +82,13 @@ public class Employee {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

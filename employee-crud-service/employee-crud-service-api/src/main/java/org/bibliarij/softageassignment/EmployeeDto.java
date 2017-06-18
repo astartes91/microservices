@@ -14,6 +14,7 @@ public class EmployeeDto {
     private String department;
     private Date employmentStartDate;
     private Date employmentEndDate;
+    private Status status;
 
     public Long getId() {
         return id;
@@ -61,5 +62,13 @@ public class EmployeeDto {
 
     public void setEmploymentEndDate(Date employmentEndDate) {
         this.employmentEndDate = employmentEndDate;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }

@@ -1,4 +1,4 @@
-package org.bibliarij.softageassignment;
+package org.bibliarij.microservices;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

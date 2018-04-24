@@ -1,4 +1,4 @@
-rootProject.name = 'softage-assignment'
+rootProject.name = 'microservices'
 include 'employee-crud-service:employee-crud-service-api'
 include 'employee-crud-service:employee-crud-service-core'
 include 'employee-report-service'

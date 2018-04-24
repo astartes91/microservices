@@ -1,4 +1,4 @@
-package org.bibliarij.softageassignment;
+package org.bibliarij.microservices;
 
 import org.springframework.stereotype.Service;
 

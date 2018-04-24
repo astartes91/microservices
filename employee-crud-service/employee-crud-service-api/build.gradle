@@ -1,4 +1,4 @@
-group 'org.bibliarij.softage-assignment'
+group 'org.bibliarij.microservices'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'

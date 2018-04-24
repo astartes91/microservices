@@ -1,4 +1,4 @@
-package org.bibliarij.softageassignment;
+package org.bibliarij.microservices;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
